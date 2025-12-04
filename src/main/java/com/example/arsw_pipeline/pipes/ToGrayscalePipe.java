@@ -18,9 +18,9 @@ public class ToGrayscalePipe implements Pipe {
 
     public ToGrayscalePipe(CircuitBreakerRegistry registry) {
         CircuitBreakerConfig configManual = CircuitBreakerConfig.custom()
-                .failureRateThreshold(1)
+                .failureRateThreshold(25)
                 .minimumNumberOfCalls(3)
-                .slidingWindowSize(5)
+                .slidingWindowSize(4)
                 .waitDurationInOpenState(Duration.ofSeconds(20))
                 .permittedNumberOfCallsInHalfOpenState(1)
                 .build();
